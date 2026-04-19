@@ -8,8 +8,8 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-site_url: https://example.netlify.app
-display_url: https://example.netlify.app
+site_url: https://nazar-ali.netlify.app
+display_url: https://nazar-ali.netlify.app
 logo_url: https://raw.githubusercontent.com/decaporg/decap-website/main/public/img/decap-logo.svg
 
 collections:

@@ -11,10 +11,10 @@ This website is built so that **you can update it yourself** without writing any
 Open your browser and go to:
 
 ```
-https://YOUR-WEBSITE-NAME.netlify.app/admin
+https://nazar-ali.netlify.app/admin
 ```
 
-*(Replace `YOUR-WEBSITE-NAME` with your actual domain. Your student will send you the exact link.)*
+Bookmark this link so you don't have to type it every time.
 
 You'll see a login screen.
 
