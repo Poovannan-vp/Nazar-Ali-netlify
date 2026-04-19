@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Research from './components/Research';
 import Patents from './components/Patents';
 import Awards from './components/Awards';
+import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -23,6 +24,7 @@ function App() {
         <Research />
         <Patents />
         <Awards />
+        <Gallery />
         <Contact />
       </main>
       <Footer />

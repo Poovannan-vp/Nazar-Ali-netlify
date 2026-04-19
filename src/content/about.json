@@ -1,0 +1,26 @@
+{
+  "sectionLabel": "About Me",
+  "title": "Know Me Better",
+  "subtitle": "A dedicated academician with nearly two decades of experience in teaching, research, and mentoring students in the field of Electrical Engineering.",
+  "heading": "Professor at Rajalakshmi Engineering College",
+  "paragraph1": "With a Ph.D. in Power Electronics and Drives from Anna University, Chennai, I have dedicated my career to advancing the field of electrical engineering through research and teaching. My work focuses on developing innovative solutions in renewable energy systems, power converters, and smart grid technologies.",
+  "paragraph2": "I secured University Second Rank in M.E (Power Electronics and Drives) with 9.21 CGPA. My research has resulted in 34 journal publications, 4 patents, and 3 books.",
+  "quickInfo": [
+    { "label": "Specialization", "value": "Power Electronics", "icon": "lightning", "color": "primary" },
+    { "label": "Research Area", "value": "Renewable Energy", "icon": "chip", "color": "accent" },
+    { "label": "Current Role", "value": "Professor", "icon": "cube", "color": "purple" },
+    { "label": "Interest", "value": "IoT Systems", "icon": "robot", "color": "green" }
+  ],
+  "expertiseAreas": [
+    { "icon": "bolt", "title": "Power Electronics", "description": "DC-DC converters, inverters, and power factor correction systems", "color": "from-blue-500 to-cyan-500" },
+    { "icon": "solar", "title": "Renewable Energy", "description": "Solar PV systems, MPPT algorithms, and energy storage", "color": "from-amber-500 to-orange-500" },
+    { "icon": "microchip", "title": "Electric Drives", "description": "Motor control, BLDC drives, and variable speed systems", "color": "from-purple-500 to-pink-500" },
+    { "icon": "robot", "title": "IoT & Automation", "description": "Smart systems, home automation, and embedded solutions", "color": "from-green-500 to-emerald-500" }
+  ],
+  "metrics": [
+    { "label": "SCI Publications", "value": "04", "color": "primary" },
+    { "label": "Scopus Indexed", "value": "30", "color": "accent" },
+    { "label": "h-index", "value": "16", "color": "purple" },
+    { "label": "i10-index", "value": "20", "color": "green" }
+  ]
+}

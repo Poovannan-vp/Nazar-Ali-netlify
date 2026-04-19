@@ -2,64 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
-import { FaBook, FaFileAlt, FaLightbulb, FaMicrophone, FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
 import { HiExternalLink, HiFilter } from 'react-icons/hi';
-
-const researchStats = [
-  { icon: <FaFileAlt />, value: 34, label: 'Journal Publications', color: 'primary' },
-  { icon: <FaBook />, value: 3, label: 'Books Published', color: 'purple' },
-  { icon: <FaLightbulb />, value: 4, label: 'Patents', color: 'accent' },
-  { icon: <FaMicrophone />, value: 32, label: 'Conference Papers', color: 'green' },
-  { icon: <FaChalkboardTeacher />, value: 140, suffix: '+', label: 'Guest Lectures', color: 'pink' },
-  { icon: <FaUsers />, value: 51, label: 'FDPs Organized', color: 'cyan' },
-];
-
-const publications = [
-  {
-    title: 'Design and development of realistic PV emulator adaptable to the maximum power point tracking algorithm and battery charging controller',
-    journal: 'Solar Energy',
-    year: 2021,
-    type: 'SCI',
-    citations: 32,
-    impactFactor: 6.708,
-  },
-  {
-    title: 'Black widow optimization-based optimal PI-controlled wind turbine emulator',
-    journal: 'Sustainability (Switzerland)',
-    year: 2020,
-    type: 'SCI',
-    citations: 27,
-    impactFactor: 3.89,
-  },
-  {
-    title: 'Design and Implementation of Integrated Cuk-Synchronous Zeta Converter for Energy Storage Applications',
-    journal: '3rd International Conference on Power Electronics and IoT Applications (PARC)',
-    year: 2024,
-    type: 'Scopus',
-    citations: 0,
-  },
-  {
-    title: 'ANN-Based Maximum Power Point Tracking Control Configured Boost Converter for Electric Vehicle Applications',
-    journal: 'Optimization Techniques in Engineering',
-    year: 2023,
-    type: 'Scopus',
-    citations: 0,
-  },
-  {
-    title: 'Investigation of Super-Lift Multilevel Inverter Using Water Pump Irrigation System',
-    journal: 'Smart Grids and Green Energy Systems',
-    year: 2022,
-    type: 'Scopus',
-    citations: 9,
-  },
-  {
-    title: 'Solar powered air conditioner using BLDC motor',
-    journal: 'IOP Conference Series: Materials Science and Engineering',
-    year: 2019,
-    type: 'Scopus',
-    citations: 21,
-  },
-];
+import { getIcon } from '../utils/iconMap';
+import research from '../content/research.json';
 
 const Research = () => {
   const [ref, inView] = useInView({
@@ -69,8 +14,8 @@ const Research = () => {
 
   const [filter, setFilter] = useState('all');
   const filteredPublications = filter === 'all'
-    ? publications
-    : publications.filter(p => p.type === filter);
+    ? research.publications
+    : research.publications.filter(p => p.type === filter);
 
   return (
     <section id="research" className="py-20 relative overflow-hidden">
@@ -84,7 +29,6 @@ const Research = () => {
         transition={{ duration: 0.5 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -92,23 +36,19 @@ const Research = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full glass text-primary-400 text-sm font-medium mb-4">
-            Research
+            {research.sectionLabel}
           </span>
-          <h2 className="section-title gradient-text">Research & Publications</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Contributing to the advancement of power electronics and renewable energy
-            through impactful research and publications.
-          </p>
+          <h2 className="section-title gradient-text">{research.title}</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">{research.subtitle}</p>
         </motion.div>
 
-        {/* Stats Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16"
         >
-          {researchStats.map((stat, index) => (
+          {research.stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -117,7 +57,7 @@ const Research = () => {
               className="glass rounded-xl p-4 text-center hover-card"
             >
               <div className={`text-2xl text-${stat.color}-400 mb-2 flex justify-center`}>
-                {stat.icon}
+                {getIcon(stat.icon)}
               </div>
               <div className="text-2xl font-bold text-white">
                 {inView && <CountUp end={stat.value} duration={2} suffix={stat.suffix || ''} />}
@@ -127,7 +67,6 @@ const Research = () => {
           ))}
         </motion.div>
 
-        {/* Citation Metrics */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -138,28 +77,28 @@ const Research = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold gradient-text">
-                {inView && <CountUp end={674} duration={2.5} />}
+                {inView && <CountUp end={research.citationMetrics.totalCitations} duration={2.5} />}
               </div>
               <div className="text-sm text-gray-400 mt-2">Total Citations</div>
               <div className="text-xs text-primary-400">Google Scholar</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-purple-400">
-                {inView && <CountUp end={16} duration={2} />}
+                {inView && <CountUp end={research.citationMetrics.hIndex} duration={2} />}
               </div>
               <div className="text-sm text-gray-400 mt-2">h-index</div>
               <div className="text-xs text-purple-400">All time</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-accent-400">
-                {inView && <CountUp end={20} duration={2} />}
+                {inView && <CountUp end={research.citationMetrics.i10Index} duration={2} />}
               </div>
               <div className="text-sm text-gray-400 mt-2">i10-index</div>
               <div className="text-xs text-accent-400">All time</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-400">
-                {inView && <CountUp end={531} duration={2.5} />}
+                {inView && <CountUp end={research.citationMetrics.citationsSince2019} duration={2.5} />}
               </div>
               <div className="text-sm text-gray-400 mt-2">Citations</div>
               <div className="text-xs text-green-400">Since 2019</div>
@@ -167,7 +106,6 @@ const Research = () => {
           </div>
         </motion.div>
 
-        {/* Publications List */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -223,9 +161,7 @@ const Research = () => {
                         </span>
                         <span className="text-gray-500 text-sm">{pub.year}</span>
                       </div>
-                      <h4 className="text-white font-medium mb-2 leading-tight">
-                        {pub.title}
-                      </h4>
+                      <h4 className="text-white font-medium mb-2 leading-tight">{pub.title}</h4>
                       <p className="text-primary-400 text-sm">{pub.journal}</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
@@ -246,7 +182,6 @@ const Research = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* View All Link */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -254,7 +189,7 @@ const Research = () => {
             className="text-center mt-8"
           >
             <a
-              href="https://scholar.google.co.in/citations?hl=en&user=_jaO6n0AAAAJ"
+              href={research.googleScholarUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors"

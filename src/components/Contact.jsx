@@ -4,63 +4,26 @@ import { useInView } from 'react-intersection-observer';
 import { HiMail, HiPhone, HiLocationMarker, HiPaperAirplane } from 'react-icons/hi';
 import { FaOrcid } from 'react-icons/fa';
 import { SiGooglescholar, SiScopus, SiClarivate } from 'react-icons/si';
-
-const contactInfo = [
-  {
-    icon: <HiMail className="text-2xl" />,
-    label: 'Email',
-    value: 'naza.annai@gmail.com',
-    link: 'mailto:naza.annai@gmail.com',
-    color: 'primary',
-  },
-  {
-    icon: <HiPhone className="text-2xl" />,
-    label: 'Phone',
-    value: '+91 9843625854',
-    link: 'tel:+919843625854',
-    color: 'green',
-  },
-  {
-    icon: <HiLocationMarker className="text-2xl" />,
-    label: 'Location',
-    value: 'Chennai, Tamil Nadu, India',
-    link: null,
-    color: 'accent',
-  },
-];
-
-const socialLinks = [
-  {
-    name: 'Google Scholar',
-    icon: <SiGooglescholar size={24} />,
-    url: 'https://scholar.google.co.in/citations?hl=en&user=_jaO6n0AAAAJ',
-    color: 'hover:text-blue-400 hover:border-blue-400',
-  },
-  {
-    name: 'Scopus',
-    icon: <SiScopus size={24} />,
-    url: 'https://www.scopus.com/authid/detail.uri?authorId=56196401100',
-    color: 'hover:text-orange-400 hover:border-orange-400',
-  },
-  {
-    name: 'Web of Science',
-    icon: <SiClarivate size={24} />,
-    url: 'https://www.webofscience.com/wos/author/record/AAQ-4716-2021',
-    color: 'hover:text-purple-400 hover:border-purple-400',
-  },
-  {
-    name: 'ORCID',
-    icon: <FaOrcid size={24} />,
-    url: 'https://orcid.org/0000-0003-3278-5482',
-    color: 'hover:text-green-400 hover:border-green-400',
-  },
-];
+import contact from '../content/contact.json';
 
 const Contact = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const contactInfo = [
+    { icon: <HiMail className="text-2xl" />, label: 'Email', value: contact.email, link: `mailto:${contact.email}`, color: 'primary' },
+    { icon: <HiPhone className="text-2xl" />, label: 'Phone', value: contact.phone, link: `tel:${contact.phone.replace(/\s/g, '')}`, color: 'green' },
+    { icon: <HiLocationMarker className="text-2xl" />, label: 'Location', value: contact.location, link: null, color: 'accent' },
+  ];
+
+  const socialLinks = [
+    { name: 'Google Scholar', icon: <SiGooglescholar size={24} />, url: contact.social.googleScholar, color: 'hover:text-blue-400 hover:border-blue-400' },
+    { name: 'Scopus', icon: <SiScopus size={24} />, url: contact.social.scopus, color: 'hover:text-orange-400 hover:border-orange-400' },
+    { name: 'Web of Science', icon: <SiClarivate size={24} />, url: contact.social.webOfScience, color: 'hover:text-purple-400 hover:border-purple-400' },
+    { name: 'ORCID', icon: <FaOrcid size={24} />, url: contact.social.orcid, color: 'hover:text-green-400 hover:border-green-400' },
+  ].filter(s => s.url);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -78,14 +41,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-
     setIsSubmitting(false);
     setSubmitted(true);
     setFormData({ name: '', email: '', subject: '', message: '' });
-
     setTimeout(() => setSubmitted(false), 5000);
   };
 
@@ -101,7 +60,6 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -109,30 +67,21 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full glass text-primary-400 text-sm font-medium mb-4">
-            Get In Touch
+            {contact.sectionLabel}
           </span>
-          <h2 className="section-title gradient-text">Contact Me</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Feel free to reach out for collaborations, research opportunities,
-            or any academic inquiries.
-          </p>
+          <h2 className="section-title gradient-text">{contact.title}</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">{contact.subtitle}</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-            <p className="text-gray-400 mb-8">
-              I'm always open to discussing new research collaborations, academic
-              opportunities, or simply connecting with fellow researchers and students
-              in the field of power electronics and renewable energy.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-6">{contact.heading}</h3>
+            <p className="text-gray-400 mb-8">{contact.description}</p>
 
-            {/* Contact Cards */}
             <div className="space-y-4 mb-8">
               {contactInfo.map((info, index) => (
                 <motion.a
@@ -156,7 +105,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social Links */}
             <div>
               <h4 className="text-sm text-gray-400 mb-4">Academic Profiles</h4>
               <div className="flex gap-4">
@@ -179,7 +127,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Current Position */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -187,15 +134,12 @@ const Contact = () => {
               className="mt-8 p-6 glass rounded-xl"
             >
               <div className="text-sm text-gray-400 mb-2">Current Position</div>
-              <div className="text-white font-semibold">Professor</div>
-              <div className="text-primary-400">Rajalakshmi Engineering College</div>
-              <div className="text-gray-400 text-sm mt-2">
-                Department of Electrical & Electronics Engineering
-              </div>
+              <div className="text-white font-semibold">{contact.currentPosition.role}</div>
+              <div className="text-primary-400">{contact.currentPosition.institution}</div>
+              <div className="text-gray-400 text-sm mt-2">{contact.currentPosition.department}</div>
             </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}

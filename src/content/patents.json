@@ -1,0 +1,51 @@
+{
+  "sectionLabel": "Innovation",
+  "title": "Patents & Inventions",
+  "subtitle": "Transforming innovative ideas into patented solutions that address real-world challenges.",
+  "items": [
+    {
+      "title": "Peltier Cooled Lunch Bag",
+      "applicationNo": "399116-001",
+      "status": "Certified",
+      "date": "16.05.2024",
+      "type": "Design Patent",
+      "inventors": ["Dr. A. Nazar Ali", "M. Amith M", "Hemachandran S K"],
+      "description": "Innovative lunch bag design incorporating Peltier cooling technology for temperature control.",
+      "icon": "🧊",
+      "image": ""
+    },
+    {
+      "title": "Visualization of Logic Gates for Education",
+      "applicationNo": "385994-001",
+      "status": "Certified",
+      "date": "11.05.2024",
+      "type": "Design Patent",
+      "inventors": ["Dr. A. Nazar Ali", "Madhu Priya S", "Kaavya Agith"],
+      "description": "Educational tool for visualizing logic gates to enhance learning experience.",
+      "icon": "🔌",
+      "image": ""
+    },
+    {
+      "title": "Detachable Strap Belt for Fitness Monitoring and Personal Safety",
+      "applicationNo": "386227-001",
+      "status": "Certified",
+      "date": "2024",
+      "type": "Design Patent",
+      "inventors": ["Dr. D. Shyam", "Dr. A. Nazar Ali", "Nithin V H"],
+      "description": "Wearable device combining fitness tracking with personal safety features.",
+      "icon": "⌚",
+      "image": ""
+    },
+    {
+      "title": "Transducer Based MIPS Tester for Microcontroller",
+      "applicationNo": "202341005307 A",
+      "status": "Published",
+      "date": "03.02.2023",
+      "type": "Patent",
+      "inventors": ["Dr. A. Nazar Ali", "D. Shyam", "T. Madhavan"],
+      "description": "Testing device for measuring microcontroller performance using transducer technology.",
+      "icon": "🔬",
+      "image": ""
+    }
+  ]
+}

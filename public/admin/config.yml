@@ -1,0 +1,358 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Use this for local testing with: npx decap-server (then run site + open /admin)
+# local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://example.netlify.app
+display_url: https://example.netlify.app
+logo_url: https://raw.githubusercontent.com/decaporg/decap-website/main/public/img/decap-logo.svg
+
+collections:
+  # ---------------- HERO ----------------
+  - name: "hero"
+    label: "🏠 Home (Hero Section)"
+    editor: { preview: false }
+    files:
+      - file: "src/content/hero.json"
+        label: "Home Page Content"
+        name: "hero"
+        fields:
+          - { label: "Top Badge (small text above name)", name: "badge", widget: "string" }
+          - { label: "First Name / Title", name: "firstName", widget: "string" }
+          - { label: "Last Name (coloured)", name: "lastName", widget: "string" }
+          - { label: "Tagline / Short Bio", name: "tagline", widget: "text" }
+          - { label: "Email (shown on hero)", name: "email", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Top-right Floating Badge", name: "badgeTopRight", widget: "string" }
+          - { label: "Bottom-left Floating Badge", name: "badgeBottomLeft", widget: "string" }
+          - label: "Hero Stats (4 numbers shown under photo)"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "value", widget: "number", value_type: "int" }
+              - { label: "Suffix (e.g. +)", name: "suffix", widget: "string", required: false }
+              - { label: "Label", name: "label", widget: "string" }
+          - label: "Academic Profile Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Google Scholar URL", name: "googleScholar", widget: "string", required: false }
+              - { label: "Scopus URL", name: "scopus", widget: "string", required: false }
+              - { label: "Web of Science URL", name: "webOfScience", widget: "string", required: false }
+              - { label: "ORCID URL", name: "orcid", widget: "string", required: false }
+
+  # ---------------- ABOUT ----------------
+  - name: "about"
+    label: "👤 About Section"
+    editor: { preview: false }
+    files:
+      - file: "src/content/about.json"
+        label: "About Content"
+        name: "about"
+        fields:
+          - { label: "Section Label (small pill)", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+          - label: "Quick Info (4 cards)"
+            name: "quickInfo"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["lightning", "chip", "cube", "robot", "bolt", "solar", "microchip"]
+              - label: "Colour"
+                name: "color"
+                widget: "select"
+                options: ["primary", "accent", "purple", "green", "pink", "cyan"]
+          - label: "Expertise Areas"
+            name: "expertiseAreas"
+            widget: "list"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["bolt", "solar", "microchip", "robot", "chip", "lightbulb"]
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Colour Gradient"
+                name: "color"
+                widget: "select"
+                options:
+                  - "from-blue-500 to-cyan-500"
+                  - "from-amber-500 to-orange-500"
+                  - "from-purple-500 to-pink-500"
+                  - "from-green-500 to-emerald-500"
+                  - "from-red-500 to-pink-500"
+          - label: "Research Metrics (4 numbers)"
+            name: "metrics"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+              - label: "Colour"
+                name: "color"
+                widget: "select"
+                options: ["primary", "accent", "purple", "green"]
+
+  # ---------------- EDUCATION ----------------
+  - name: "education"
+    label: "🎓 Education"
+    editor: { preview: false }
+    files:
+      - file: "src/content/education.json"
+        label: "Education Section"
+        name: "education"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Degrees (add/remove/edit)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["graduation", "university", "trophy", "medal"]
+              - { label: "Colour (hex, e.g. #3b82f6)", name: "color", widget: "string" }
+              - { label: "Achievement Text (leave blank if none)", name: "achievementText", widget: "string", required: false }
+              - { label: "Achievement Score", name: "achievementScore", widget: "string", required: false }
+
+  # ---------------- EXPERIENCE ----------------
+  - name: "experience"
+    label: "💼 Experience"
+    editor: { preview: false }
+    files:
+      - file: "src/content/experience.json"
+        label: "Experience Section"
+        name: "experience"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Summary Cards (4 boxes at top)"
+            name: "summaryCards"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value (e.g. 19+ Years)", name: "value", widget: "string" }
+              - { label: "Emoji", name: "emoji", widget: "string" }
+          - label: "Positions (add/remove/edit)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Job Title", name: "title", widget: "string" }
+              - { label: "Organization", name: "organization", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Type (e.g. Teaching & Research)", name: "type", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Responsibilities (one per line)", name: "responsibilities", widget: "list" }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["userTie", "academicCap", "chalkboard", "briefcase"]
+              - { label: "Colour (hex)", name: "color", widget: "string" }
+              - { label: "Is this the current position?", name: "current", widget: "boolean", default: false }
+
+  # ---------------- RESEARCH ----------------
+  - name: "research"
+    label: "📚 Research & Publications"
+    editor: { preview: false }
+    files:
+      - file: "src/content/research.json"
+        label: "Research Section"
+        name: "research"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Stats (6 cards)"
+            name: "stats"
+            widget: "list"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["fileAlt", "book", "lightbulb", "microphone", "chalkboard", "users"]
+              - { label: "Number", name: "value", widget: "number", value_type: "int" }
+              - { label: "Suffix", name: "suffix", widget: "string", required: false }
+              - { label: "Label", name: "label", widget: "string" }
+              - label: "Colour"
+                name: "color"
+                widget: "select"
+                options: ["primary", "purple", "accent", "green", "pink", "cyan"]
+          - label: "Citation Metrics"
+            name: "citationMetrics"
+            widget: "object"
+            fields:
+              - { label: "Total Citations", name: "totalCitations", widget: "number", value_type: "int" }
+              - { label: "h-index", name: "hIndex", widget: "number", value_type: "int" }
+              - { label: "i10-index", name: "i10Index", widget: "number", value_type: "int" }
+              - { label: "Citations Since 2019", name: "citationsSince2019", widget: "number", value_type: "int" }
+          - { label: "Google Scholar URL", name: "googleScholarUrl", widget: "string" }
+          - label: "Publications (add/remove/edit)"
+            name: "publications"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "text" }
+              - { label: "Journal / Conference", name: "journal", widget: "string" }
+              - { label: "Year", name: "year", widget: "number", value_type: "int" }
+              - label: "Type"
+                name: "type"
+                widget: "select"
+                options: ["SCI", "Scopus"]
+              - { label: "Citations", name: "citations", widget: "number", value_type: "int", default: 0 }
+              - { label: "Impact Factor (optional)", name: "impactFactor", widget: "number", value_type: "float", required: false }
+
+  # ---------------- PATENTS ----------------
+  - name: "patents"
+    label: "💡 Patents"
+    editor: { preview: false }
+    files:
+      - file: "src/content/patents.json"
+        label: "Patents Section"
+        name: "patents"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Patents (add/remove/edit)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Application Number", name: "applicationNo", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["Certified", "Published"]
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Type (e.g. Design Patent / Patent)", name: "type", widget: "string" }
+              - { label: "Inventors (one per line)", name: "inventors", widget: "list" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Emoji Icon (optional)", name: "icon", widget: "string", default: "💡" }
+              - { label: "Patent Image (optional — upload certificate/photo)", name: "image", widget: "image", required: false }
+
+  # ---------------- AWARDS ----------------
+  - name: "awards"
+    label: "🏆 Awards & Memberships"
+    editor: { preview: false }
+    files:
+      - file: "src/content/awards.json"
+        label: "Awards Section"
+        name: "awards"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Awards (add/remove/edit)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Award Title", name: "title", widget: "string" }
+              - { label: "Organization", name: "organization", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["trophy", "medal", "star", "award", "sparkles", "userTie"]
+              - label: "Colour Gradient"
+                name: "color"
+                widget: "select"
+                options:
+                  - "from-yellow-400 to-amber-600"
+                  - "from-blue-400 to-primary-600"
+                  - "from-purple-400 to-purple-600"
+                  - "from-green-400 to-emerald-600"
+                  - "from-orange-400 to-red-600"
+                  - "from-cyan-400 to-blue-600"
+                  - "from-pink-400 to-rose-600"
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Award Photo (optional — upload certificate/ceremony photo)", name: "image", widget: "image", required: false }
+          - label: "Professional Memberships"
+            name: "memberships"
+            widget: "list"
+            fields:
+              - { label: "Name (e.g. IEEE)", name: "name", widget: "string" }
+              - { label: "Status (e.g. Senior Member)", name: "status", widget: "string" }
+              - { label: "Emoji Icon", name: "icon", widget: "string" }
+          - label: "Highlights (bottom summary pill)"
+            name: "highlights"
+            widget: "object"
+            fields:
+              - { label: "Guest Lectures", name: "guestLectures", widget: "string" }
+              - { label: "FDPs Organized", name: "fdpsOrganized", widget: "string" }
+              - { label: "FDPs Attended", name: "fdpsAttended", widget: "string" }
+
+  # ---------------- GALLERY ----------------
+  - name: "gallery"
+    label: "📸 Gallery (Recent Event Photos)"
+    editor: { preview: false }
+    files:
+      - file: "src/content/gallery.json"
+        label: "Gallery Section"
+        name: "gallery"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Photos (add new events, award ceremonies, lectures, FDPs)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Caption / Title", name: "caption", widget: "string" }
+              - { label: "Date (e.g. 2024 or Jan 2024)", name: "date", widget: "string", required: false }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Award", "Guest Lecture", "FDP", "Conference", "Workshop", "Event"]
+                required: false
+
+  # ---------------- CONTACT ----------------
+  - name: "contact"
+    label: "📬 Contact Info"
+    editor: { preview: false }
+    files:
+      - file: "src/content/contact.json"
+        label: "Contact Section"
+        name: "contact"
+        fields:
+          - { label: "Section Label", name: "sectionLabel", widget: "string" }
+          - { label: "Section Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Heading (e.g. Let's Connect)", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - label: "Current Position"
+            name: "currentPosition"
+            widget: "object"
+            fields:
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+              - { label: "Department", name: "department", widget: "string" }
+          - label: "Academic Profile Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Google Scholar URL", name: "googleScholar", widget: "string", required: false }
+              - { label: "Scopus URL", name: "scopus", widget: "string", required: false }
+              - { label: "Web of Science URL", name: "webOfScience", widget: "string", required: false }
+              - { label: "ORCID URL", name: "orcid", widget: "string", required: false }

@@ -1,0 +1,22 @@
+{
+  "badge": "Professor | Researcher | Power Electronics Expert",
+  "firstName": "Dr. A.",
+  "lastName": "Nazar Ali",
+  "tagline": "PhD in Power Electronics & Drives from Anna University. Currently serving as Professor at Rajalakshmi Engineering College, Chennai with expertise in renewable energy systems, power converters, and IoT applications.",
+  "email": "naza.annai@gmail.com",
+  "location": "Chennai, India",
+  "badgeTopRight": "IEEE Senior Member",
+  "badgeBottomLeft": "h-index: 16",
+  "stats": [
+    { "value": 19, "suffix": "+", "label": "Years Experience" },
+    { "value": 674, "suffix": "", "label": "Citations" },
+    { "value": 34, "suffix": "", "label": "Publications" },
+    { "value": 140, "suffix": "+", "label": "Guest Lectures" }
+  ],
+  "social": {
+    "googleScholar": "https://scholar.google.co.in/citations?hl=en&user=_jaO6n0AAAAJ",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=56196401100",
+    "webOfScience": "https://www.webofscience.com/wos/author/record/AAQ-4716-2021",
+    "orcid": "https://orcid.org/0000-0003-3278-5482"
+  }
+}

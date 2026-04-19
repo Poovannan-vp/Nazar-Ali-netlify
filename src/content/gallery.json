@@ -1,0 +1,13 @@
+{
+  "sectionLabel": "Gallery",
+  "title": "Recent Events & Moments",
+  "subtitle": "Highlights from awards, guest lectures, FDPs, and academic events.",
+  "items": [
+    {
+      "caption": "Add your first event photo here",
+      "date": "2024",
+      "category": "Award",
+      "image": ""
+    }
+  ]
+}

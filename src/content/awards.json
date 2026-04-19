@@ -1,0 +1,75 @@
+{
+  "sectionLabel": "Recognition",
+  "title": "Awards & Achievements",
+  "subtitle": "Honored for contributions to education, research, and academic leadership.",
+  "items": [
+    {
+      "title": "IGEN ENSAV ICON Award",
+      "organization": "St. Xaviers Catholic College of Engineering",
+      "year": "2024",
+      "icon": "trophy",
+      "color": "from-yellow-400 to-amber-600",
+      "description": "Recognition for outstanding contributions to engineering education.",
+      "image": ""
+    },
+    {
+      "title": "Best Faculty Award",
+      "organization": "Rajalakshmi Engineering College",
+      "year": "2022 & 2023",
+      "icon": "award",
+      "color": "from-blue-400 to-primary-600",
+      "description": "Awarded for excellence in teaching and research.",
+      "image": ""
+    },
+    {
+      "title": "Best Outstanding Faculty Award",
+      "organization": "IET Kanyakumari Local Network",
+      "year": "2020",
+      "icon": "star",
+      "color": "from-purple-400 to-purple-600",
+      "description": "Recognized by Institution of Engineering and Technology.",
+      "image": ""
+    },
+    {
+      "title": "Young Scientist Award",
+      "organization": "International Journal RULA",
+      "year": "2018",
+      "icon": "sparkles",
+      "color": "from-green-400 to-emerald-600",
+      "description": "Awarded for significant contributions to scientific research.",
+      "image": ""
+    },
+    {
+      "title": "University Second Rank",
+      "organization": "Anna University",
+      "year": "2009",
+      "icon": "medal",
+      "color": "from-orange-400 to-red-600",
+      "description": "Secured 9.21 CGPA in M.E (Power Electronics and Drives).",
+      "image": ""
+    },
+    {
+      "title": "Best HOD Award",
+      "organization": "K. Ramakrishnan College of Technology",
+      "year": "2015 & 2016",
+      "icon": "userTie",
+      "color": "from-cyan-400 to-blue-600",
+      "description": "Recognition for exceptional departmental leadership.",
+      "image": ""
+    }
+  ],
+  "memberships": [
+    { "name": "IEEE", "status": "Senior Member", "icon": "🔷" },
+    { "name": "ISTE", "status": "Life Member", "icon": "🏛️" },
+    { "name": "ECS", "status": "Life Member", "icon": "⚡" },
+    { "name": "IAENG", "status": "Life Member", "icon": "🌐" },
+    { "name": "IJRULA", "status": "Life Member", "icon": "📚" },
+    { "name": "ISRD", "status": "Life Member", "icon": "🔬" },
+    { "name": "IACC", "status": "Life Member", "icon": "💻" }
+  ],
+  "highlights": {
+    "guestLectures": "140+",
+    "fdpsOrganized": "51",
+    "fdpsAttended": "40"
+  }
+}

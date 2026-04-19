@@ -1,0 +1,21 @@
+{
+  "sectionLabel": "Get In Touch",
+  "title": "Contact Me",
+  "subtitle": "Feel free to reach out for collaborations, research opportunities, or any academic inquiries.",
+  "heading": "Let's Connect",
+  "description": "I'm always open to discussing new research collaborations, academic opportunities, or simply connecting with fellow researchers and students in the field of power electronics and renewable energy.",
+  "email": "naza.annai@gmail.com",
+  "phone": "+91 9843625854",
+  "location": "Chennai, Tamil Nadu, India",
+  "currentPosition": {
+    "role": "Professor",
+    "institution": "Rajalakshmi Engineering College",
+    "department": "Department of Electrical & Electronics Engineering"
+  },
+  "social": {
+    "googleScholar": "https://scholar.google.co.in/citations?hl=en&user=_jaO6n0AAAAJ",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=56196401100",
+    "webOfScience": "https://www.webofscience.com/wos/author/record/AAQ-4716-2021",
+    "orcid": "https://orcid.org/0000-0003-3278-5482"
+  }
+}

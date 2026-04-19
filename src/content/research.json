@@ -1,0 +1,66 @@
+{
+  "sectionLabel": "Research",
+  "title": "Research & Publications",
+  "subtitle": "Contributing to the advancement of power electronics and renewable energy through impactful research and publications.",
+  "stats": [
+    { "icon": "fileAlt", "value": 34, "label": "Journal Publications", "color": "primary" },
+    { "icon": "book", "value": 3, "label": "Books Published", "color": "purple" },
+    { "icon": "lightbulb", "value": 4, "label": "Patents", "color": "accent" },
+    { "icon": "microphone", "value": 32, "label": "Conference Papers", "color": "green" },
+    { "icon": "chalkboard", "value": 140, "suffix": "+", "label": "Guest Lectures", "color": "pink" },
+    { "icon": "users", "value": 51, "label": "FDPs Organized", "color": "cyan" }
+  ],
+  "citationMetrics": {
+    "totalCitations": 674,
+    "hIndex": 16,
+    "i10Index": 20,
+    "citationsSince2019": 531
+  },
+  "googleScholarUrl": "https://scholar.google.co.in/citations?hl=en&user=_jaO6n0AAAAJ",
+  "publications": [
+    {
+      "title": "Design and development of realistic PV emulator adaptable to the maximum power point tracking algorithm and battery charging controller",
+      "journal": "Solar Energy",
+      "year": 2021,
+      "type": "SCI",
+      "citations": 32,
+      "impactFactor": 6.708
+    },
+    {
+      "title": "Black widow optimization-based optimal PI-controlled wind turbine emulator",
+      "journal": "Sustainability (Switzerland)",
+      "year": 2020,
+      "type": "SCI",
+      "citations": 27,
+      "impactFactor": 3.89
+    },
+    {
+      "title": "Design and Implementation of Integrated Cuk-Synchronous Zeta Converter for Energy Storage Applications",
+      "journal": "3rd International Conference on Power Electronics and IoT Applications (PARC)",
+      "year": 2024,
+      "type": "Scopus",
+      "citations": 0
+    },
+    {
+      "title": "ANN-Based Maximum Power Point Tracking Control Configured Boost Converter for Electric Vehicle Applications",
+      "journal": "Optimization Techniques in Engineering",
+      "year": 2023,
+      "type": "Scopus",
+      "citations": 0
+    },
+    {
+      "title": "Investigation of Super-Lift Multilevel Inverter Using Water Pump Irrigation System",
+      "journal": "Smart Grids and Green Energy Systems",
+      "year": 2022,
+      "type": "Scopus",
+      "citations": 9
+    },
+    {
+      "title": "Solar powered air conditioner using BLDC motor",
+      "journal": "IOP Conference Series: Materials Science and Engineering",
+      "year": 2019,
+      "type": "Scopus",
+      "citations": 21
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "sectionLabel": "Experience",
+  "title": "Professional Journey",
+  "subtitle": "19+ years of dedicated service in teaching, research, and academic leadership across prestigious engineering institutions.",
+  "summaryCards": [
+    { "label": "Total Experience", "value": "19+ Years", "emoji": "👨‍🏫" },
+    { "label": "As Professor", "value": "6+ Years", "emoji": "🎓" },
+    { "label": "As HOD", "value": "9+ Years", "emoji": "👔" },
+    { "label": "Institutions", "value": "5", "emoji": "🏛️" }
+  ],
+  "items": [
+    {
+      "title": "Professor",
+      "organization": "Rajalakshmi Engineering College",
+      "duration": "June 2018 - Present",
+      "type": "Teaching & Research",
+      "description": "Leading research initiatives, coordinating NBA accreditation, journal publications, and NPTEL programs.",
+      "responsibilities": [
+        "Coordinator for NBA Accreditation",
+        "Coordinator for Journal Publications",
+        "In-charge for NPTEL Programs"
+      ],
+      "icon": "userTie",
+      "color": "#3b82f6",
+      "current": true
+    },
+    {
+      "title": "Professor & Head of Department",
+      "organization": "K. Ramakrishnan College of Technology",
+      "duration": "5 Years",
+      "type": "Teaching & Research",
+      "description": "Led the department with administrative responsibilities along with teaching and research.",
+      "responsibilities": [
+        "Anna University Affiliation Coordinator",
+        "AICTE, AISHE and NIRF Coordinator",
+        "Magazine Coordinator"
+      ],
+      "icon": "academicCap",
+      "color": "#8b5cf6",
+      "current": false
+    },
+    {
+      "title": "Assistant Professor & HOD",
+      "organization": "Annai Mathammal Sheela Engineering College",
+      "duration": "4 Years",
+      "type": "Teaching & Research",
+      "description": "Combined teaching excellence with departmental leadership.",
+      "responsibilities": [
+        "Department Administration",
+        "Curriculum Development",
+        "Student Mentoring"
+      ],
+      "icon": "chalkboard",
+      "color": "#f59e0b",
+      "current": false
+    },
+    {
+      "title": "Lecturer",
+      "organization": "M. Kumarasamy College of Engineering",
+      "duration": "3 Years",
+      "type": "Teaching",
+      "description": "Focused on delivering quality education in electrical engineering.",
+      "responsibilities": [
+        "Course Delivery",
+        "Lab Supervision",
+        "Student Assessment"
+      ],
+      "icon": "briefcase",
+      "color": "#10b981",
+      "current": false
+    },
+    {
+      "title": "Lecturer",
+      "organization": "St. Xaviers Catholic College of Engineering",
+      "duration": "1 Year",
+      "type": "Teaching",
+      "description": "Started academic career with foundational teaching responsibilities.",
+      "responsibilities": [
+        "Core Subject Teaching",
+        "Practical Sessions"
+      ],
+      "icon": "briefcase",
+      "color": "#ec4899",
+      "current": false
+    }
+  ]
+}

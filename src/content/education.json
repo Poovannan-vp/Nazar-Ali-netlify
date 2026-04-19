@@ -1,0 +1,37 @@
+{
+  "sectionLabel": "Education",
+  "title": "Academic Journey",
+  "subtitle": "A strong academic foundation built through prestigious institutions and recognized with distinguished achievements.",
+  "items": [
+    {
+      "degree": "Ph.D. in Power Electronics and Drives",
+      "institution": "Anna University, Chennai",
+      "year": "2017",
+      "description": "Specialized research in power electronics, converters, and drive systems.",
+      "icon": "graduation",
+      "color": "#3b82f6",
+      "achievementText": "",
+      "achievementScore": ""
+    },
+    {
+      "degree": "M.E. in Power Electronics and Drives",
+      "institution": "Anna University, Chennai",
+      "year": "2009",
+      "description": "Advanced studies in power systems and electronic drives.",
+      "icon": "university",
+      "color": "#8b5cf6",
+      "achievementText": "University Second Rank",
+      "achievementScore": "9.21 CGPA"
+    },
+    {
+      "degree": "B.E. in Electrical and Electronics Engineering",
+      "institution": "Madurai Kamaraj University",
+      "year": "2003",
+      "description": "Foundation in electrical engineering principles and applications.",
+      "icon": "university",
+      "color": "#f59e0b",
+      "achievementText": "First Class with Distinction",
+      "achievementScore": "76.9%"
+    }
+  ]
+}
