@@ -58,7 +58,14 @@ const Footer = () => {
             © {new Date().getFullYear()} Dr. A. Nazar Ali. All rights reserved.
           </div>
           <div className="flex items-center gap-1 text-gray-500">
-            Made with <FaHeart className="text-red-500 mx-1" /> for academic excellence
+              Made with <FaHeart className="text-red-500 mx-1" /> for academic excellence
+        </p>
+        <p className="text-sm">
+          Developed by <span className="font-semibold text-gray-900">Poovannan V P</span>
+        </p>
+        <p className="text-xs text-gray-500 uppercase tracking-wider mt-1">
+          Software Engineer| Temenos
+        </p>
           </div>
         </div>
       </div>
